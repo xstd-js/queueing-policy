@@ -956,12 +956,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@xstd/abortable@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "@xstd/abortable@npm:1.2.3"
+  checksum: 10c0/85a0925989eea7164940506f940d0026b1c76eacdd9912a601675f41e1adfc5a81eabd972db633e25afb58cfb9745f1ace455944f0f76d4eea77c4528bbaa11c
+  languageName: node
+  linkType: hard
+
+"@xstd/none@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@xstd/none@npm:1.0.0"
+  checksum: 10c0/6b2d936f0b75dc9efdce54e6617c360cfe1aafb48c0e26d28eb2cc77d3d2093360ecad15b6559a92ba217e9c8068de28070947de71a9cec8385115cdaecd720e
+  languageName: node
+  linkType: hard
+
 "@xstd/queueing-policy@workspace:.":
   version: 0.0.0-use.local
   resolution: "@xstd/queueing-policy@workspace:."
   dependencies:
     "@types/node": "npm:^26.1.2"
     "@vitest/coverage-istanbul": "npm:^4.1.10"
+    "@xstd/abortable": "npm:^1.2.3"
+    "@xstd/none": "npm:^1.0.0"
     fabrique: "npm:2.0.12"
     prettier: "npm:^3.9.6"
     prettier-plugin-organize-imports: "npm:^4.3.0"

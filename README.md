@@ -128,3 +128,14 @@ declare class TimeQueuingPolicy extends QueueingPolicy {
   constructor(expirationTime: number);
 }
 ```
+
+#### InfiniteQueuingPolicy
+
+```ts
+/**
+ * Represents an "infinite" queuing policy: a queue able to grow infinitely without any upper limit on its size.
+ *
+ * Elements are continually added to the queue and persist until explicitly removed through dequeuing.
+ */
+declare const InfiniteQueuingPolicy: QueueingPolicy;
+```

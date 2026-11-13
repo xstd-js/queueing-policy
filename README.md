@@ -13,7 +13,7 @@
 
 ## @xstd/queueing-policy
 
-A simple queueing-policy API.
+Create queues with encapsulated retention policies: infinite, bounded, expiring or edge-triggered.
 
 ## 📦 Installation
 

@@ -2,8 +2,14 @@
   "name": "@xstd/queueing-policy",
   "version": "1.1.1",
   "type": "module",
-  "description": "A simple queueing-policy API.",
-  "keywords": [],
+  "description": "Create queues with encapsulated retention policies: infinite, bounded, expiring or edge-triggered",
+  "keywords": [
+    "queue",
+    "fifo",
+    "ttl",
+    "bounded",
+    "expiring"
+  ],
   "author": "Valentin Richard",
   "license": "MIT",
   "repository": {

@@ -1,5 +1,5 @@
 import { NONE } from '@xstd/none';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import type { Queue } from '../../queue.ts';
 import { EdgeQueuingPolicy } from './edge-queuing-policy.ts';
 

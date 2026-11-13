@@ -1,5 +1,5 @@
-import { NONE } from '@xstd/none';
 import { sleep } from '@xstd/abortable';
+import { NONE } from '@xstd/none';
 import { describe, expect, it } from 'vitest';
 import type { Queue } from '../../queue.ts';
 import { TimeQueuingPolicy } from './time-queuing-policy.ts';

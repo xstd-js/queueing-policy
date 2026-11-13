@@ -5,11 +5,21 @@ import { QueueingPolicy } from '../../queueing-policy.ts';
 /**
  * Represents a "time" queuing policy: a queue where each value is associated with an expiration date.
  *
- * This policy ensures that the queue retains values with a maximum amount of time (expressed as milliseconds through `expirationTime`).
- * When a value expires, it is removed to make space for new elements.
+ * This policy ensures that the queue retains values for a maximum amount of time (expressed as
+ * milliseconds through `expirationTime`).
+ *
+ * @remarks
+ * Expired values are discarded lazily: they are removed when the queue is used (on `enqueue` or
+ * `dequeue`), so `dequeue` never returns an expired value.
  */
 export class TimeQueuingPolicy extends QueueingPolicy {
-  constructor(expirationTime: number /* ms */) {
+  /**
+   * Creates a new `TimeQueuingPolicy`.
+   *
+   * @param expirationTime - The maximum amount of time a value is retained, in milliseconds. Must be strictly greater than zero.
+   * @throws If `expirationTime` is less than or equal to zero.
+   */
+  constructor(expirationTime: number) {
     if (expirationTime <= 0) {
       throw new Error(`Invalid expiration time: ${expirationTime}`);
     }

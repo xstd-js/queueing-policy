@@ -10,11 +10,15 @@ type Step = typeof IDLE_STEP | typeof PULL_STEP | typeof QUEUED_STEP;
 /**
  * Represents an "edge" queuing policy: a queue to retrieve _future_ values only.
  *
- * 1. first, `dequeue` is called and returns `NONE` as no value exists.
+ * 1. first, `dequeue` is called and returns `NONE` as no value exists: the queue is now waiting for the next value.
  * 2. second, `enqueue` happens and pushes a value into the queue.
  * 3. finally, `dequeue` is called later and returns the pushed value.
  *
  * And the cycle repeats.
+ *
+ * @remarks
+ * At most one value is retained at a time: values enqueued while the queue is not waiting
+ * (i.e. without a pending `dequeue` request) or while a value is already queued are dropped.
  */
 export const EdgeQueuingPolicy = /* @__PURE__ */ new QueueingPolicy(<GValue>(): Queue<GValue> => {
   let queuedValue: GValue;
